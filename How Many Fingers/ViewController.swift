@@ -9,6 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var fingersTextField: UITextField!
+    
+    @IBAction func guessButton(sender: AnyObject) {
+        
+        let randomFingers = String(arc4random_uniform(6))
+        
+        if fingersTextField == randomFingers {
+            resultLabel.text = "You are rignt"
+        } else {
+            resultLabel.text = "wrong, it was \(randomFingers)"
+        }
+    }
+    
+    @IBOutlet weak var resultLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
